@@ -1,0 +1,85 @@
+:root{
+    font-size: 16px;
+    color: F1F1F3;
+    background-color: #F1F1F3;
+}
+.doctor-chooser {
+    display: flex;
+    height: 40vh;
+    flex-direction: row;
+    width: 80%;
+    margin-left: auto; 
+    margin-right: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.doctor-chooser::after{
+    clear: both;
+}
+.image-keeper {
+    height: 50vh;
+    background-color: blue;
+}   
+.doctor-img
+{
+    height: 50vh;
+    width: 100%;
+}
+
+.pediatry, .home-doctor  {
+    display: flex;
+    background-color: rgba(0, 204, 142);
+    width: 50%;
+    height: 80%;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    margin: 0 auto;
+    
+}
+
+.cont {
+    display: none;
+    position: absolute;  
+
+}
+.cont2{
+    position: absolute;
+    display: block;
+    transform:translate(0px, 200px)
+}
+.headers {
+    min-height: 10vh;
+    text-align: center;
+    color: rgb(0, 98, 188);
+    font-size: 2rem;
+  
+}
+.headers h1 {
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: auto;
+}
+.wrapper {
+    min-height: 100vh;
+}
+@media screen and (max-width: 768px){
+    .doctor-chooser{
+        display: block;
+     
+    }
+    .pediatry, .home-doctor {
+        position: relative;
+        width: 80%;
+        margin: 50px auto;
+
+    }
+    .headers{
+        text-align: center;
+        color: rgb(0, 98, 188);
+        font-size: 1rem;
+    }
+}
