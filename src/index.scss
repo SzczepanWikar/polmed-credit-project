@@ -1,9 +1,9 @@
 @use './styles/variables.scss' as variables;
 
 // use global variables example
-body {
-  background-color: variables.$primary-color-lighter;
-}
+// body {
+//   background-color: variables.$primary-color-lighter;
+// }
 
 :root {
   --black-gradient: linear-gradient(144.39deg);
