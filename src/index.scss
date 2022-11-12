@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@use './styles/variables.scss' as variables;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// use global variables example
+body {
+  background-color: variables.$primary-color-lighter;
+}
 
 :root {
-  --black-gradient: linear-gradient(
-    144.39deg,
-    
-  );
+  --black-gradient: linear-gradient(144.39deg);
 }
