@@ -12,42 +12,17 @@ import { Service } from './common/interfaces/service.interface';
 export const App = () => {
   return (
     <>
-      <Router>
-        <Navbar />
+      <GlobalContext.Provider value={{ doctors: doctors, services: services }}>
+        <Router>
+          <Navbar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <GlobalContext.Provider
-                value={{ doctors: doctors, services: services }}
-              >
-                <Home />
-              </GlobalContext.Provider>
-            }
-          />
-          <Route
-            path="/services"
-            element={
-              <GlobalContext.Provider
-                value={{ doctors: doctors, services: services }}
-              >
-                <Services />
-              </GlobalContext.Provider>
-            }
-          />
-          <Route
-            path="/products"
-            element={
-              <GlobalContext.Provider
-                value={{ doctors: doctors, services: services }}
-              >
-                <Products />
-              </GlobalContext.Provider>
-            }
-          />
-        </Routes>
-      </Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/products" element={<Products />} />
+          </Routes>
+        </Router>
+      </GlobalContext.Provider>
       <footer>Footer</footer>
     </>
   );
