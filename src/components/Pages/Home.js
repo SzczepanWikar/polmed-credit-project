@@ -2,10 +2,11 @@ import Style from './Style.scss';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import  people from  '../../assets/images/people.png' 
-
+import  doctor from  '../../assets/images/doctor.png' 
 export const Home = () => {
 
   const[style, setStyle] = useState("cont");
+  
   
   const changeStyle = () => {
     if(style == 'cont')
@@ -23,31 +24,40 @@ export const Home = () => {
       <div className='headers'>
         <h1 >Wybierz swojego Lekarza</h1>
       </div>
-        <ul className='doctor-chooser'>
+      <div className='doctor-wrapper'>
+        <div className='doctor-chooser'>
+          <div className="drop-down">
+        <button onClick={changeStyle} className='doctor'>
+          Pediatry</button>
+            <ul className={style}>
+              <li className='text'>
+                <img src={doctor}/>
+                <Link to="/products"><button>Umów się</button></Link>
+              </li>
+              <li className='text'>
+                <img src={doctor}/>
+                <Link to="/products"><button>Umów się</button></Link>
+              </li>
+            </ul>
+            </div>
+            <div className="drop-down">
+        <button onClick={changeStyle} className='doctor'>
+         Home-Doctor</button>
+            <ul className={style}>
+              <li>
+                <img src={doctor} />
+                <Link to= '/products/'>
+                    <button>Umów się</button></Link>
+              </li>
+              <li>
+                <img src={doctor} />
+                <Link to="/products"><button>Umów się</button></Link>
+              </li>
+            </ul>
+          </div>
           
-          <li className='pediatry'>
-            <button onClick={changeStyle}>Pediatry</button>
-            <ul className={style}>
-          <li className='text'>
-            <img src={people}/>Lek. Lorem Ipsum
-            </li>
-            <li className='text'>
-            <img src={people}/>Lek. Lorem Ipsum
-            </li>
-          </ul>
-          </li>
-          <li className='home-doctor'>
-            <button onClick={changeStyle}>Home-Doctor</button>
-            <ul className={style}>
-          <li>
-            Lek. Lorem Ipsum
-            </li>
-            <li>
-            Lek. Lorem Ipsum
-            </li>
-          </ul>
-          </li>
-        </ul>
+        </div>
+        </div>
        </div>
        
     </>
