@@ -17,9 +17,7 @@ export const App = () => {
           <Route path='/products' element = { <Products />} />
         </Routes>
         </Router>
-        <footer>
-          Footer
-        </footer>
+        
         
       </>
       

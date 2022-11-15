@@ -1,0 +1,6 @@
+import React, {useState} from "react";
+ export  function Doctors_data()
+ {
+   
+ }
+ export default Doctors_data;
