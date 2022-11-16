@@ -5,15 +5,20 @@ import  people from  '../../assets/images/people.png'
 import  doctor from  '../../assets/images/doctor.png' 
 export const Home = () => {
 
-  const[style, setStyle] = useState("cont");
-  
-  
-  const changeStyle = () => {
-    if(style == 'cont')
-    return setStyle("cont2");
-    else if(style == 'cont2')
-    return setStyle('cont');
+  const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'cont':
+      return 'cont2';
+    case 'cont2':
+      return 'cont2';
+    default:
+      throw new Error();
   }
+
+ const [state, dispatch]  = useReducer(reducer ,initialState);
+
   return (
     
     <>
@@ -27,12 +32,12 @@ export const Home = () => {
       <div className='doctor-wrapper'>
         <div className='doctor-chooser'>
           <div className="drop-down">
-        <button onClick={changeStyle} className='doctor'>
+        <button onClick = {() => dispatch({type: 'cont'})} className='doctor'>
           Pediatry</button>
             <ul className={style}>
               <li className='text'>
                 <img src={doctor}/>
-                <Link to="/products"><button>Umów się</button></Link>
+                <Link to="/products"><button >Umów się</button></Link>
               </li>
               <li className='text'>
                 <img src={doctor}/>
@@ -41,7 +46,7 @@ export const Home = () => {
             </ul>
             </div>
             <div className="drop-down">
-        <button onClick={changeStyle} className='doctor'>
+        <button onClick = {() => dispatch({type: 'cont'})} className='doctor'>
          Home-Doctor</button>
             <ul className={style}>
               <li>
