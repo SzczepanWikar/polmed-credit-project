@@ -1,19 +1,19 @@
-import { Router, Routes, Route } from "react-router-dom";
-import { Specialization } from "./common/enums/specialization.enum";
-import { Doctor } from "./common/interfaces/doctor.interface";
-import { Service } from "./common/interfaces/service.interface";
-import { Footer } from "./components/Footer/Footer";
-import Home from "./components/home/Home";
-import Navbar from "./components/Navbar/Navbar";
-import { GlobalContext } from "./Contexts/GlobalContext";
-import { DoctorVisit } from "./Pages/DoctorVisit/DoctorVisit";
-import { Summary } from "./Pages/Summary/Summary";
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.scss';
+import { Specialization } from './common/enums/specialization.enum';
+import { Doctor } from './common/interfaces/doctor.interface';
+import { Service } from './common/interfaces/service.interface';
+import { Footer } from './components/Footer/Footer';
+import Home from './components/home/Home';
+import Navbar from './components/Navbar/Navbar';
+import { GlobalContext } from './Contexts/GlobalContext';
+import { DoctorVisit } from './Pages/DoctorVisit/DoctorVisit';
+import { Summary } from './Pages/Summary/Summary';
 export const App = () => {
   return (
     <>
       <GlobalContext.Provider value={{ doctors: doctors, services: services }}>
-        
+        <Router>
           <Navbar />
           <main>
             <Routes>
@@ -22,8 +22,9 @@ export const App = () => {
               <Route path="/summary" element={<Summary />} />
             </Routes>
           </main>
-          <Footer />
-        
+          
+        </Router>
+        <Footer />
       </GlobalContext.Provider>
     </>
   );
