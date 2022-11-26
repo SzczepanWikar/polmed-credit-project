@@ -5,4 +5,5 @@ export interface Doctor {
   name: string;
   lastName: string;
   specialization: Specialization;
+  avatar: string;
 }

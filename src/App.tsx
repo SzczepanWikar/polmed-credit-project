@@ -1,29 +1,30 @@
-import React from 'react';
-import Navbar from './components/home/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from './components/home/Home.js';
-import { Services } from './components/Pages/Services.js';
-import { Products } from './components/Pages/Products.js';
-import './App.scss';
-import { GlobalContext } from './Contexts/GlobalContext';
-import { Specialization } from './common/enums/specialization.enum';
-import { Doctor } from './common/interfaces/doctor.interface';
-import { Service } from './common/interfaces/service.interface';
+import { Router, Routes, Route } from "react-router-dom";
+import { Specialization } from "./common/enums/specialization.enum";
+import { Doctor } from "./common/interfaces/doctor.interface";
+import { Service } from "./common/interfaces/service.interface";
+import { Footer } from "./components/Footer/Footer";
+import Home from "./components/home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import { GlobalContext } from "./Contexts/GlobalContext";
+import { DoctorVisit } from "./Pages/DoctorVisit/DoctorVisit";
+import { Summary } from "./Pages/Summary/Summary";
+
 export const App = () => {
   return (
     <>
       <GlobalContext.Provider value={{ doctors: doctors, services: services }}>
-        <Router>
+        
           <Navbar />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-          </Routes>
-        </Router>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/doctor-visit" element={<DoctorVisit />} />
+              <Route path="/summary" element={<Summary />} />
+            </Routes>
+          </main>
+          <Footer />
+        
       </GlobalContext.Provider>
-      {/* <footer>Footer</footer> */}
     </>
   );
 };
@@ -36,24 +37,28 @@ const doctors: Doctor[] = [
     name: 'Jan',
     lastName: 'Kowalski',
     specialization: Specialization.familyDoctor,
+    avatar: '',
   },
   {
     id: 2,
     name: 'Anna',
     lastName: 'Kowalska',
     specialization: Specialization.pediatrician,
+    avatar: '',
   },
   {
     id: 3,
     name: 'Zofia',
     lastName: 'Nowak',
     specialization: Specialization.familyDoctor,
+    avatar: '',
   },
   {
     id: 4,
     name: 'Antoni',
     lastName: 'Wiśwnieski',
     specialization: Specialization.pediatrician,
+    avatar: '',
   },
 ];
 
