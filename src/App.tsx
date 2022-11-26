@@ -3,6 +3,7 @@ import './App.scss';
 import { Specialization } from './common/enums/specialization.enum';
 import { Doctor } from './common/interfaces/doctor.interface';
 import { Service } from './common/interfaces/service.interface';
+import { Footer } from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Pages/Home';
 import { GlobalContext } from './Contexts/GlobalContext';
@@ -20,7 +21,7 @@ export const App = () => {
             <Route path="/doctor-visit" element={<DoctorVisit />} />
             <Route path="/summary" element={<Summary />} />
           </Routes>
-          <footer>Footer</footer>
+          <Footer />
         </Router>
       </GlobalContext.Provider>
     </>

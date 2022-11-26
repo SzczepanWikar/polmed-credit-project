@@ -1,0 +1,6 @@
+@use './../../common/styles/variables.scss' as variables;
+
+.footer {
+  background-color: variables.$primary-color-dark;
+  padding: 16px;
+}
