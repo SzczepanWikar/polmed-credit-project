@@ -46,28 +46,7 @@
             display: flex;
             list-style: none;
             justify-content: space-around;
-            .drop-down{
-               
-                .doctor {
-                    cursor: pointer;
-                    width: 500px;
-                    background-color: #00cc8e;
-                }
-                .cont{
-                    display: none;
-                    list-style: none;
-                    
-                    }
-                .cont2:onHo{
-                    
-                    display: block;
-                    list-style: none;
-                    background-color: red;
-                    
-                    }
-                
-            }
-            
+
         }
     }
 }
