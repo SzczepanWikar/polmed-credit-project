@@ -18,10 +18,19 @@
     * {
       cursor: pointer;
     }
+    @media (max-width: variables.$mobile) {
+      font-size: 3rem;
+    }
   }
   &__costom-icon {
     height: 27px;
     width: 27px;
     margin: 2.5px;
+
+    @media (max-width: variables.$mobile) {
+      height: 40px;
+      width: 40px;
+      margin: 4px;
+    }
   }
 }
