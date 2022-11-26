@@ -1,6 +1,27 @@
 @use './../../common/styles/variables.scss' as variables;
 
 .footer {
+  height: 7rem;
   background-color: variables.$primary-color-dark;
   padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 300;
+  color: #fff;
+  justify-content: space-between;
+
+  &__icons {
+    font-size: 2rem;
+    display: flex;
+    gap: 16px;
+    * {
+      cursor: pointer;
+    }
+  }
+  &__costom-icon {
+    height: 27px;
+    width: 27px;
+    margin: 2.5px;
+  }
 }

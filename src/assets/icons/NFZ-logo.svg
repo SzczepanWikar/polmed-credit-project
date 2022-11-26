@@ -7,41 +7,16 @@
    viewBox="0 0 58.814491 58.814499"
    version="1.1"
    id="svg680"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview682"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="1.7260913"
-     inkscape:cx="396.85039"
-     inkscape:cy="656.39634"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g917" />
+   xmlnsSvg="http://www.w3.org/2000/svg">
   <defs
      id="defs677" />
   <g
-     inkscape:label="Warstwa 1"
-     inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-72.469476,-150.25904)">
     <g
        id="g708"
-       transform="translate(-1.7361594,47.3114)"
-       inkscape:connector-avoid="true">
+       transform="translate(-1.7361594,47.3114)">
       <g
          id="g3067">
         <path

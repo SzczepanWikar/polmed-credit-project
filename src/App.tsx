@@ -15,12 +15,13 @@ export const App = () => {
       <GlobalContext.Provider value={{ doctors: doctors, services: services }}>
         <Router>
           <Navbar />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/doctor-visit" element={<DoctorVisit />} />
-            <Route path="/summary" element={<Summary />} />
-          </Routes>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/doctor-visit" element={<DoctorVisit />} />
+              <Route path="/summary" element={<Summary />} />
+            </Routes>
+          </main>
           <Footer />
         </Router>
       </GlobalContext.Provider>
