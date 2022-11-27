@@ -1,12 +1,12 @@
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   font-family: 'PT Sans', sans-serif;
- }
- body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'LAto', sans-serif;
+}
+body {
   min-height: 100vh;
- }
+}
 //  .home,
 //  .services,
 //  .products,
@@ -16,40 +16,32 @@
 //    align-items: center;
 //    justify-content: center;
 //    font-size: 3rem;
-  
+
 //  }
+main {
+  min-height: calc(100vh - 80px - 7rem);
+}
 
- .services {
+.services {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 100px;
+}
 
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   color: black;
-   font-size: 100px;
- }
- 
- .products {
+.products {
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 100px;
+}
 
-   background-position: center;
-   background-size: fill;
-   background-repeat: no-repeat;
-   color: black;
-   font-size: 100px;
- }
- 
- .sign-up {
- 
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   color: #fff;
-   font-size: 100px;
- }
- footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: #305FAD;
-  
+.sign-up {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }

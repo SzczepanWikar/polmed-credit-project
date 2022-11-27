@@ -3,6 +3,7 @@ import './App.scss';
 import { Specialization } from './common/enums/specialization.enum';
 import { Doctor } from './common/interfaces/doctor.interface';
 import { Service } from './common/interfaces/service.interface';
+import { Footer } from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Pages/Home';
 import { GlobalContext } from './Contexts/GlobalContext';
@@ -14,13 +15,14 @@ export const App = () => {
       <GlobalContext.Provider value={{ doctors: doctors, services: services }}>
         <Router>
           <Navbar />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/doctor-visit" element={<DoctorVisit />} />
-            <Route path="/summary" element={<Summary />} />
-          </Routes>
-          <footer>Footer</footer>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/doctor-visit" element={<DoctorVisit />} />
+              <Route path="/summary" element={<Summary />} />
+            </Routes>
+          </main>
+          <Footer />
         </Router>
       </GlobalContext.Provider>
     </>
