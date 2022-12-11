@@ -1,0 +1,151 @@
+@use '../../../../common/styles/variables.scss' as variables;
+
+.dropdown{
+    height: 2rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    &-button{
+        text-align: center;
+        color: white;
+        background-color: #00CC8E;
+        position: relative;
+        cursor: pointer;
+        padding: 2rem;
+        border-radius: 6px;
+        
+        .dropdown-list:hover{
+            border: 1px solid white;
+        }
+    }
+    .dropdown-button:hover{
+        color: white;
+        background-color: #1EC08F;
+   
+    }
+}
+    .dropdown-list{
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        border: 1px solid transparent;
+        position: relative;
+        width: 80%;
+        li{
+            list-style: none;
+            background-color: white;
+            display: grid; 
+            padding: 40px 0px;
+            grid-template-columns: 30% 70%; 
+            grid-template-rows: 33% 33% 33%; 
+            gap: 0px 0px; 
+            border-radius: 6px;
+            margin-bottom: 20px;
+            
+            .doctor-picture{
+                grid-row: 1 / span 3;
+                grid-column: 1;
+                border-radius: 6px;
+                margin-left: 11px;
+            }
+            button{
+                cursor: pointer;
+                grid-row: 3;
+                grid-column: 2; 
+                background-color: #00CC8E;
+                border: none;
+                margin-left: 45rem;
+                padding: 10px;
+                border-radius: 6px;
+                color: white;
+            }
+            .name{
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                color: #305FAD;
+                grid-row: 1;
+                grid-column: 2; 
+            }
+            .specialization{
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+                color: #41C19A;
+                grid-row: 2;
+                grid-column: 2; 
+            }
+        }
+        li:hover{
+            border: 1px solid white;
+        }
+        
+    }
+
+@media screen and (max-width: variables.$mobile){
+.dropdown-list{
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border: 1px solid transparent;
+    position: relative;
+    width: 80%;
+    li{
+        list-style: none;
+        background-color: white;
+        display: grid; 
+        padding: 20px 0px;
+        grid-template-columns: 30% 70%; 
+        grid-template-rows: 33% 33% 33%; 
+        gap: 0px 0px; 
+        border-radius: 6px;
+        margin-bottom: 20px;
+        
+        .doctor-picture{
+            grid-row: 1 / span 3;
+            grid-column: 1;
+            border-radius: 6px;
+            margin-left: 11px;
+        }
+        button{
+            grid-row: 3;
+            grid-column: 2; 
+            background-color: #00CC8E;
+            border: none;
+            margin-left: 240px;
+            padding: 10px;
+            border-radius: 6px;
+            color: white;
+        }
+        .name{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #305FAD;
+            grid-row: 1;
+            grid-column: 2; 
+        }
+        .specialization{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            color: #41C19A;
+            grid-row: 2;
+            grid-column: 2; 
+        }
+    }
+    li:hover{
+        border: 1px solid white;
+    }
+    
+}
+}

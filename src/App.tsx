@@ -4,7 +4,7 @@ import { Specialization } from './common/enums/specialization.enum';
 import { Doctor } from './common/interfaces/doctor.interface';
 import { Service } from './common/interfaces/service.interface';
 import { Footer } from './components/Footer/Footer';
-import Home from './components/home/Home';
+import Home from './Pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import { GlobalContext } from './Contexts/GlobalContext';
 import { DoctorVisit } from './Pages/DoctorVisit/DoctorVisit';

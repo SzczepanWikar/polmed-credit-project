@@ -1,8 +1,9 @@
-import Style from '../Pages/Style.scss';
+import  './Home.scss';
 import React from 'react';
 import  people from  '../../assets/images/people.png' 
 import  doctor from  '../../assets/images/doctor.png' 
-import Dropdown from "./Dropdown.js";
+import Dropdown from './components/Dropdown/Dropdown';
+
 export const Home = () => {
 
 
@@ -17,12 +18,16 @@ export const Home = () => {
       <h1 >Wybierz swojego Lekarza</h1>
     </div>
     <div className='doctor-wrapper'>
-        <div className='doctor-chooser'>
-        <Dropdown name="Home-doctor" />
         
-        <Dropdown name="Pediatrian"/>
+        <Dropdown >
+          Pediatra
+        </Dropdown>
         
-        </div>
+        <Dropdown >
+          Lekarz rodzinny
+        </Dropdown>
+        
+        
         </div>
   </div>
        
