@@ -38,28 +38,28 @@ const doctors: Doctor[] = [
     name: 'Jan',
     lastName: 'Kowalski',
     specialization: Specialization.familyDoctor,
-    avatar: '',
+    avatar: 'jan-kowalski.jpg',
   },
   {
     id: 2,
     name: 'Anna',
     lastName: 'Kowalska',
     specialization: Specialization.pediatrician,
-    avatar: '',
+    avatar: 'anna-kowalska.jpg',
   },
   {
     id: 3,
     name: 'Zofia',
     lastName: 'Nowak',
     specialization: Specialization.familyDoctor,
-    avatar: '',
+    avatar: 'zofia-nowak.jpg',
   },
   {
     id: 4,
     name: 'Antoni',
     lastName: 'Wiśwnieski',
     specialization: Specialization.pediatrician,
-    avatar: '',
+    avatar: 'antoni-wisniewski.jpg',
   },
 ];
 

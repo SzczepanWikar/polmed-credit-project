@@ -1,4 +1,4 @@
 export enum Specialization {
-  familyDoctor = 'FAMILY_DOCTOR',
-  pediatrician = 'PEDIATRICIAN',
+  familyDoctor = 'Lekarz rodzinny',
+  pediatrician = 'Pediatra',
 }
