@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import './App.scss';
 import { Footer } from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -10,7 +15,7 @@ export const App = () => {
   return (
     <>
       <GlobalContext.Provider value={globalData}>
-        <Router>
+        <BrowserRouter>
           <Navbar />
           <main>
             <Routes>
@@ -20,7 +25,7 @@ export const App = () => {
             </Routes>
           </main>
           <Footer />
-        </Router>
+        </BrowserRouter>
       </GlobalContext.Provider>
     </>
   );
