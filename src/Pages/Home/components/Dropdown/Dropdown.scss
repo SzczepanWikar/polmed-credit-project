@@ -47,7 +47,8 @@
                 grid-row: 1 / span 3;
                 grid-column: 1;
                 border-radius: 6px;
-                margin-left: 11px;
+                margin-left: 38px;
+                width: 110px;
             }
             button{
                 cursor: pointer;
@@ -110,14 +111,15 @@
             grid-row: 1 / span 3;
             grid-column: 1;
             border-radius: 6px;
-            margin-left: 11px;
+            
+            
         }
         button{
             grid-row: 3;
             grid-column: 2; 
             background-color: #00CC8E;
             border: none;
-            margin-left: 240px;
+            margin-left: 290px;
             padding: 10px;
             border-radius: 6px;
             color: white;
