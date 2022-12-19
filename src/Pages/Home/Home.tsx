@@ -1,11 +1,12 @@
 import  './Home.scss';
-import React from 'react';
+import React, { useContext } from 'react';
 import  people from  '../../assets/images/people.png' 
 import  doctor from  '../../assets/images/doctor.png' 
 import Dropdown from './components/Dropdown/Dropdown';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 
 export const Home = () => {
-
+  const ctx = useContext(GlobalContext)
 
   return (
     
