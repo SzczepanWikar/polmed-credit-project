@@ -22,6 +22,24 @@
       margin: 2rem 0;
     }
   }
+  &__doctor-data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    @media (max-width: vars.$mobile) {
+      display: block;
+    }
+  }
+  &__doctor-avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    @media (max-width: vars.$mobile) {
+      display: none;
+    }
+    img {
+      max-width: 60%;
+      border-radius: 6px;
+    }
+  }
   &__select {
     padding: 0.5rem;
     width: 100%;
