@@ -1,6 +1,6 @@
 .navbar {
-    background: rgb(91, 139, 201);
-    height: 80px;
+    background: #F0F8FF;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,15 @@
     top: 0;
     z-index: 999;
   }
-  
+  .icon{
+    width: 60px;
+    height: 60px;
+  }
+  .text{
+    width: 213px;
+    height: 136px;
+
+  }
   .navbar-container {
     display: flex;
     justify-content: center;
@@ -19,7 +27,6 @@
   }
   
   .navbar-logo {
-    color: #fff;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -27,6 +34,8 @@
     font-size: 2rem;
     display: flex;
     align-items: center;
+    position: absolute;
+      top: 0;
   }
   
   .fa-typo3 {
@@ -73,10 +82,10 @@
   
     .navbar-logo {
       position: absolute;
+      top: 0;
       margin-left: auto;
       margin-right: auto;
-      top: 0;
-      transform: translate(0, 50%);
+
     }
 
   

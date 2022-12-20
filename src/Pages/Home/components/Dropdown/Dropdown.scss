@@ -8,12 +8,23 @@
     margin-bottom: 100px;
     &-button{
         text-align: center;
+        display: flex;
+        font-size: 25px;
+        font-weight: bold;
+        flex-direction: row;
+        gap: 10px;
         color: white;
         background-color: #00CC8E;
         position: relative;
         cursor: pointer;
+        justify-content: center;
         padding: 2rem;
         border-radius: 6px;
+        span{
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
         
         .dropdown-list:hover{
             border: 1px solid white;
@@ -32,6 +43,7 @@
         border: 1px solid transparent;
         position: relative;
         width: 80%;
+        
         li{
             list-style: none;
             background-color: white;
@@ -56,7 +68,7 @@
                 grid-column: 2; 
                 background-color: #00CC8E;
                 border: none;
-                margin-left: 45rem;
+                margin-left: 455px;
                 padding: 10px;
                 border-radius: 6px;
                 color: white;
@@ -88,14 +100,9 @@
         
     }
 
-@media screen and (max-width: variables.$mobile){
+@media screen and (min-width: variables.$mobile){
 .dropdown-list{
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    border: 1px solid transparent;
-    position: relative;
-    width: 80%;
+   
     li{
         list-style: none;
         background-color: white;
@@ -119,7 +126,7 @@
             grid-column: 2; 
             background-color: #00CC8E;
             border: none;
-            margin-left: 290px;
+            margin-left: 350px;
             padding: 10px;
             border-radius: 6px;
             color: white;

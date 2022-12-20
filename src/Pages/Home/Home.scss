@@ -1,4 +1,4 @@
-// @import from ../variables/variables.css
+@use '../../common/styles/variables.scss' as variables;
 :root{
     background-color: #F9F9F9;
     font-size: 16px;
@@ -17,20 +17,27 @@
 }
 
 .wrapper{
-    
     width: 100%;
-    
-
-    .image-keeper{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-
-    
-    .doctor-img{
-    width: 100%;
-    height:40vh;
-    }
+    min-height: 100vh;
+    .content-keeper{
+        background-color: #7196d5;
+        display: flex; 
+        flex-direction: row;
+        justify-content:space-between;
+        padding-left: 0;
+        .text-keeper{
+            width: 50%;
+            text-align: justify;
+            color: white;
+            text-justify: inter-word;
+            font-size: 20px;
+            align-self: center;
+            margin-left: 60px;
+        }
+        .image{
+            height: 400px;
+           
+        }
     }
     .headers{
         padding: 25px 0;
@@ -40,19 +47,15 @@
         }
     }
     
-        .doctor-chooser{
-           
-            height: 60%;
-            display: block;
+        .doctors-wrapper{
+        
             list-style: none;
             justify-content: space-around;
 
         }
     
 }
-@media  screen  and (min-width: 320px){
+@media screen and (min-width: variables.$mobile){
    
-    
-        
-    
+   
 }

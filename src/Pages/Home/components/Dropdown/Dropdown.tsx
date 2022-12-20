@@ -6,11 +6,15 @@ import { Specialization } from '../../../../common/enums/specialization.enum';
 //  import {anna, antoni, jan, zofia } from '../../../../assets/images/export_all.jsx';
 import doctor from '../../../../assets/images/doctor.png'
 import { Doctor } from '../../../../common/interfaces/doctor.interface';
+import  parents from  '../../../../assets/icons/parents.svg'
+import  child from  '../../../../assets/icons/child.svg'
+import { Icon } from '@iconify/react';
 
 interface Props {
   children?: React.ReactNode;
+  ikonka?: any;
 }
- const Dropdown: React.FC<Props>= ({children}) => {
+ const Dropdown: React.FC<Props>= ({children, ikonka}) => {
 
   const[state, setState] = useState(false);
   const showDropdown=()=>{
@@ -63,22 +67,23 @@ interface Props {
     <div>
        <div className="dropdown">
           <div className="dropdown-button" onClick={state ? hideDropdown : showDropdown} >
-           {children}   
-           
-          </div>
-    </div>
+          <Icon icon= {ikonka} color="white" width="40" height="40"/>
+            <span>{children}</span>
+            
+          </div> 
+        </div>
     
-    {state? (<ul className="dropdown-list" onClick={showDropdown} >     
+        {state? (<ul className="dropdown-list" onClick={showDropdown} >     
               <div>
                 { doctors.map(obj =>  obj.specialization === children  ? 
                 
                 <div>
                   
                   <li>
-                  <img className="doctor-picture" src={doctor} />
+                  <img className="doctor-picture" src={require(`../../../../assets/images/`+ obj.avatar )} />
                   <span className="name">Lek. {obj.name + " " + obj.lastName}</span>
                   <span className="specialization">{obj.specialization}</span>
-                  <Link to= {`/doctor-visit/${obj.id}`}><button>Umów się</button></Link>
+                  <Link to= {`/doctor-visit?id=${obj.id}`}><button>Umów się</button></Link>
                 </li>
                 </div>
                   : null)}
