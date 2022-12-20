@@ -1,10 +1,18 @@
 import './Summary.scss';
 
 export const Summary = () => {
+
   return (
+
     <>
-      <h1>Summary</h1>
-      <h2>ELO</h2>
+      <div className='header'>
+        <h1>Potwierdzenie rezerwacji</h1>
+      </div>
+      <div>
+        Doktor: 
+      </div>
+      
     </>
+
   );
 };
