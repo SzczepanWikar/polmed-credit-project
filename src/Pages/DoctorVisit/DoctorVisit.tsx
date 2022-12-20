@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { GlobalContext } from '../../Contexts/GlobalContext';
-import { InputWrapper } from './components/Input/InputWrapper';
+import { InputWrapper } from './components/InputWrapper/InputWrapper';
 import './DoctorVisit.scss';
-import { VisitCalendar } from './components/Calendar/VisitCalendar';
+import { VisitCalendar } from './components/VisitCalendar/VisitCalendar';
 import { Doctor } from '../../common/interfaces/doctor.interface';
 
 export const DoctorVisit: React.FC = () => {

@@ -1,10 +1,12 @@
 @use './../../../../common/styles/variables.scss' as vars;
 
 .react-calendar {
-  background-color: vars.$primary-color-light;
+  background-color: vars.$primary-color-lighter;
   padding: 1rem;
   border-radius: 6px;
   max-width: 20rem;
+  margin-top: 0.5rem;
+
   button {
     border: none;
     font-size: 1rem;
@@ -61,6 +63,9 @@
   &__tile {
     &--active {
       background-color: vars.$secondary-color;
+    }
+    &:disabled {
+      background-color: vars.$primary-color-light;
     }
   }
 }

@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 6.5rem auto;
   padding: 0.5rem 0;
-  @media (max-width: vars.$mobile) {
+  @media (max-width: 350px) {
     display: block;
     grid-template-columns: none;
     input {
@@ -23,10 +23,10 @@
     font-size: 1.1rem;
     padding: 0.5rem;
     border-radius: 6px;
-    border: 1px solid vars.$primary-color-dark;
+    border: 1px solid vars.$primary-color-darker;
     &:disabled {
-      // background-color: vars.$primary-color-light;
-      color: vars.$primary-color-dark;
+      background-color: vars.$primary-color-lighter;
+      color: vars.$primary-color-darker;
     }
   }
 }
