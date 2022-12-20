@@ -75,9 +75,11 @@ export const DoctorVisit: React.FC = () => {
               </optgroup>
             </select>
           </div>
-          <label>Data wizyty</label>
-          <div className="doctor-visit__calendar-container">
-            <VisitCalendar />
+          <div className="doctor-visit__calendar">
+            <label>Data wizyty</label>
+            <div className="doctor-visit__calendar__container">
+              <VisitCalendar />
+            </div>
           </div>
           <InputWrapper name="Godzina" type="time"></InputWrapper>
           <div className="doctor-visit__buttons">

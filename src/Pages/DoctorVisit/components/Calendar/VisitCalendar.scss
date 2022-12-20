@@ -1,7 +1,7 @@
 @use './../../../../common/styles/variables.scss' as vars;
 
 .react-calendar {
-  background-color: aliceblue;
+  background-color: vars.$primary-color-light;
   padding: 1rem;
   border-radius: 6px;
   max-width: 20rem;
@@ -46,21 +46,21 @@
       justify-items: center;
       gap: 0.5rem;
       &__day {
-        background: vars.$primary-color-light;
+        background: vars.$primary-color;
         border-radius: 50%;
         height: 2rem;
         max-width: 2rem;
         width: 2rem;
         min-width: 2rem;
         &--neighboringMonth {
-          background-color: vars.$primary-color-lighter;
+          background-color: vars.$primary-color-light;
         }
       }
     }
   }
   &__tile {
     &--active {
-      background-color: vars.$secondary-color-light;
+      background-color: vars.$secondary-color;
     }
   }
 }
