@@ -1,11 +1,20 @@
 @use './../../../../common/styles/variables.scss' as vars;
 
 .input-wrapper {
-  padding: 0.5rem;
   width: 100%;
   display: grid;
   grid-template-columns: 6.5rem auto;
-
+  padding: 0.5rem 0;
+  @media (max-width: 350px) {
+    display: block;
+    grid-template-columns: none;
+    input {
+      width: 100%;
+    }
+    label {
+      padding-bottom: 0.5rem;
+    }
+  }
   label {
     display: flex;
     align-items: center;
@@ -14,9 +23,9 @@
     font-size: 1.1rem;
     padding: 0.5rem;
     border-radius: 6px;
-    border: 1px solid vars.$primary-color-dark;
+    border: 1px solid vars.$primary-color-darker;
     &:disabled {
-      background-color: aliceblue;
+      background-color: vars.$primary-color-lighter;
       color: vars.$primary-color-darker;
     }
   }

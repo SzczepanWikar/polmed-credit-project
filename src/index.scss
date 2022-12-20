@@ -10,3 +10,7 @@
 :root {
   --black-gradient: linear-gradient(144.39deg);
 }
+html,
+body {
+  overflow-x: hidden;
+}
