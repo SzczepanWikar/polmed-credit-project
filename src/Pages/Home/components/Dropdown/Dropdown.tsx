@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import   './Dropdown.scss';
 import { Link } from 'react-router-dom';
 import { Specialization } from '../../../../common/enums/specialization.enum';
@@ -9,12 +9,14 @@ import { Doctor } from '../../../../common/interfaces/doctor.interface';
 import  parents from  '../../../../assets/icons/parents.svg'
 import  child from  '../../../../assets/icons/child.svg'
 import { Icon } from '@iconify/react';
-
+import { GlobalContext } from '../../../../Contexts/GlobalContext';
 interface Props {
   children?: React.ReactNode;
   ikonka?: any;
 }
  const Dropdown: React.FC<Props>= ({children, ikonka}) => {
+
+  const ctx = useContext(GlobalContext);
 
   const[state, setState] = useState(false);
   const showDropdown=()=>{
@@ -32,36 +34,7 @@ interface Props {
 //   console.log(doctor.doctors);
 // }
 
- const doctors: Doctor[] =  [
-  {
-    id: 1,
-    name: 'Jan',
-    lastName: 'Kowalski',
-    specialization: Specialization.familyDoctor,
-    avatar: 'jan-kowalski.jpg',
-  },
-  {
-    id: 2,
-    name: 'Anna',
-    lastName: 'Kowalska',
-    specialization: Specialization.pediatrician,
-    avatar: 'anna-kowalska.jpg',
-  },
-  {
-    id: 3,
-    name: 'Zofia',
-    lastName: 'Nowak',
-    specialization: Specialization.familyDoctor,
-    avatar: 'zofia-nowak.jpg',
-  },
-  {
-    id: 4,
-    name: 'Antoni',
-    lastName: 'Wiśwnieski',
-    specialization: Specialization.pediatrician,
-    avatar: 'antoni-wisniewski.jpg',
-  },
-];
+
                   /*doctors.filter(obj => obj.id === 3)*/
   return (
     <div>
@@ -75,7 +48,7 @@ interface Props {
     
         {state? (<ul className="dropdown-list" onClick={showDropdown} >     
               <div>
-                { doctors.map(obj =>  obj.specialization === children  ? 
+                { ctx.doctors.map(obj =>  obj.specialization === children  ? 
                 
                 <div>
                   

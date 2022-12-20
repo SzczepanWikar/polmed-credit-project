@@ -10,7 +10,7 @@ export const App = () => {
   return (
     <>
       <GlobalContext.Provider value={{ doctors: doctors, services: services }}>
-        <Router>
+        <BrowserRouter>
           <Navbar />
           <main>
             <Routes>
@@ -20,7 +20,7 @@ export const App = () => {
             </Routes>
           </main>
           
-        </Router>
+        </BrowserRouter>
         <Footer />
       </GlobalContext.Provider>
     </>
