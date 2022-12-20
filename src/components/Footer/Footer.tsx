@@ -7,8 +7,12 @@ export const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer__icons">
-        <NfzLogo className="footer__costom-icon" />
-        <Icon icon="ic:baseline-facebook" className="footer__icon" />
+        <a href="https://www.nfz.gov.pl" target="_blank">
+          <NfzLogo className="footer__costom-icon" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <Icon icon="ic:baseline-facebook" className="footer__icon" />
+        </a>
       </div>
       <span>Przychodnia lekarska Polmed</span>
     </footer>

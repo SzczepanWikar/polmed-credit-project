@@ -18,6 +18,9 @@
     * {
       cursor: pointer;
     }
+    a {
+      color: #fff;
+    }
     @media (max-width: variables.$mobile) {
       font-size: 3rem;
     }
