@@ -1,0 +1,31 @@
+@use '../../common/styles/variables.scss' as vars;
+
+.SummaryPage {
+  display: flex;
+  justify-content: center;
+
+  &_container {
+    background-color: #fff;
+    h1 {
+      color: vars.$primary-color-darker;
+    }
+  }
+  &_buttons {
+    display: flex;
+    button {
+      font-size: 1rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+    }
+    &_home {
+      color: #fff;
+      background-color: vars.$secondary-color;
+      border: none;
+    }
+    &_cancel {
+      color: red;
+      background-color: vars.$primary-color-lighter;
+      border-color: red;
+    }
+  }
+}
