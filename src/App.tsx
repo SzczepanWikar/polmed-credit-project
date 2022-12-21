@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import { Footer } from './components/Footer/Footer';
+import Home from './Pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
-import Home from './components/Pages/Home';
 import { GlobalContext, doctors, services } from './Contexts/GlobalContext';
 import { DoctorVisit } from './Pages/DoctorVisit/DoctorVisit';
 import { Summary } from './Pages/Summary/Summary';
@@ -19,8 +19,9 @@ export const App = () => {
               <Route path="/summary" element={<Summary />} />
             </Routes>
           </main>
-          <Footer />
+          
         </BrowserRouter>
+        <Footer />
       </GlobalContext.Provider>
     </>
   );

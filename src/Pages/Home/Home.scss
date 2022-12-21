@@ -1,0 +1,47 @@
+@use '../../common/styles/variables.scss' as vars;
+
+
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+    .content-keeper{
+        background-color: vars.$primary-color-darker;
+        display: flex; 
+        flex-direction: row;
+        gap: 30px;
+        justify-content:space-between;
+        padding-left: 0;
+        .text-keeper{
+            width: 50%;
+            text-align: justify;
+            color: white;
+            text-justify: inter-word;
+            font-size: 20px;
+            align-self: center;
+            margin-left: 60px;
+        }
+        .image{
+            height: 400px;
+           
+        }
+    }
+    .headers{
+        padding: 25px 0;
+        h1{
+            text-align: center;
+            color: vars.$primary-color-darker;
+        }
+    }
+    
+        .doctors-wrapper{
+        
+            list-style: none;
+            justify-content: space-around;
+
+        }
+    
+}
+@media screen and (min-width: vars.$mobile){
+   
+   
+}

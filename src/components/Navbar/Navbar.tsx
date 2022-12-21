@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../home/Button';
 import './Navbar.scss';
+import mainIcon from '../../assets/icons/mainIcon.svg'
+import title from '../../assets/icons/title.svg'
+
 export const Navbar = () => {
   const [click, setClick] = useState(false);
 
@@ -22,41 +24,9 @@ export const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          PolMed <i className="fab fa-typo3"></i>
+        <img  src={mainIcon} className="icon"/> <img className="text" src={title}/> 
         </Link>
-        <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/services"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Services
-            </Link>
-          </li>
-          <li className="/nav-item">
-            <Link to="Products" className="nav-links" onClick={closeMobileMenu}>
-              Products
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/sign-up"
-              className="nav-links-mobile"
-              onClick={closeMobileMenu}
-            >
-              Sign up
-            </Link>
-          </li>
-        </ul>
+        
       </div>
     </nav>
   );
