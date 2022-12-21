@@ -4,6 +4,7 @@ export type InputProps = {
   value?: any;
   disabled?: boolean;
   readonly?: boolean;
+  type?: 'text' | 'time' | undefined;
 };
 
 export const InputWrapper: React.FC<InputProps> = ({
@@ -11,9 +12,15 @@ export const InputWrapper: React.FC<InputProps> = ({
   value,
   disabled = false,
   readonly = false,
+  type = 'text',
 }) => (
   <div className="input-wrapper">
     <label>{name}</label>
-    <input readOnly={readonly} disabled={disabled} value={value}></input>
+    <input
+      type={type}
+      readOnly={readonly}
+      disabled={disabled}
+      value={value}
+    ></input>
   </div>
 );

@@ -3,19 +3,26 @@
 .doctor-visit {
   display: flex;
   justify-content: center;
+  button:hover {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: auto;
+  }
   &__container {
-    margin: 2rem 1rem 0 1rem;
+    margin: 2rem 1rem;
     background-color: #fff;
     border-radius: 6px;
     padding: 16px;
-    width: vars.$mobile;
+    max-width: vars.$mobile;
+    width: 100%;
     font-size: 1.1rem;
 
     h1 {
       text-align: center;
     }
     h2 {
-      margin: 1rem 0 1rem 0.5rem;
+      margin: 1rem 0;
     }
 
     form {
@@ -25,26 +32,39 @@
   &__doctor-data {
     display: grid;
     grid-template-columns: 50% 50%;
-    @media (max-width: vars.$mobile) {
-      display: block;
+    @media (max-width: 600px) {
+      grid-template-columns: none;
     }
   }
   &__doctor-avatar-wrapper {
     display: flex;
     justify-content: center;
     @media (max-width: vars.$mobile) {
+      justify-content: right;
+    }
+    @media (max-width: 600px) {
       display: none;
     }
     img {
-      max-width: 60%;
+      max-width: 12rem;
+      max-height: 12rem;
       border-radius: 6px;
     }
   }
   &__select {
-    padding: 0.5rem;
     width: 100%;
     display: grid;
     grid-template-columns: 6.5rem auto;
+    padding: 0.5rem 0;
+    @media (max-width: 350px) {
+      display: block;
+      select {
+        width: 100%;
+      }
+      label {
+        padding-bottom: 0.5rem;
+      }
+    }
     label {
       display: flex;
       align-items: center;
@@ -54,13 +74,40 @@
 
       padding: 0.5rem;
       border-radius: 6px;
-      border: 1px solid vars.$primary-color-dark;
+      border: 1px solid vars.$primary-color-darker;
       optgroup {
         font-size: 1.1rem;
         & :first-child {
           display: none;
         }
       }
+    }
+  }
+
+  &__calendar {
+    padding: 0.5rem 0;
+    &__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    button {
+      font-size: 1.1rem;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 6px;
+    }
+    &__next {
+      color: #fff;
+      background-color: vars.$secondary-color;
+    }
+    &__back {
+      background-color: vars.$primary-color-lighter;
     }
   }
 }

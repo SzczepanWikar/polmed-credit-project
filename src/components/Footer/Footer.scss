@@ -2,7 +2,7 @@
 
 .footer {
   height: 7rem;
-  background-color: variables.$primary-color-dark;
+  background-color: variables.$primary-color-darker;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -17,6 +17,9 @@
     gap: 16px;
     * {
       cursor: pointer;
+    }
+    a {
+      color: #fff;
     }
     @media (max-width: variables.$mobile) {
       font-size: 3rem;
