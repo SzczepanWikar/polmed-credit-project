@@ -1,4 +1,4 @@
-@use '../../../../common/styles/variables.scss' as variables;
+@use '../../../../common/styles/variables.scss' as vars;
 
 .dropdown{
     height: 2rem;
@@ -14,7 +14,7 @@
         flex-direction: row;
         gap: 10px;
         color: white;
-        background-color: #00CC8E;
+        background-color: vars.$secondary-color;
         position: relative;
         cursor: pointer;
         justify-content: center;
@@ -39,7 +39,6 @@
     .dropdown-list{
         margin-left: auto;
         margin-right: auto;
-        color: white;
         border: 1px solid transparent;
         position: relative;
         width: 80%;
@@ -66,7 +65,7 @@
                 cursor: pointer;
                 grid-row: 3;
                 grid-column: 2; 
-                background-color: #00CC8E;
+                background-color: vars.$secondary-color;
                 border: none;
                 margin-left: 455px;
                 padding: 10px;
@@ -74,18 +73,16 @@
                 color: white;
             }
             .name{
-                font-family: 'Lato';
-                font-style: normal;
+                
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 24px;
-                color: #305FAD;
+                color: vars.$primary-color-darker;
                 grid-row: 1;
                 grid-column: 2; 
             }
             .specialization{
-                font-family: 'Lato';
-                font-style: normal;
+                
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 19px;
@@ -100,7 +97,7 @@
         
     }
 
-@media screen and (min-width: variables.$mobile){
+@media screen and (min-width: vars.$mobile){
 .dropdown-list{
    
     li{

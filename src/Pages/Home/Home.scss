@@ -1,28 +1,14 @@
-@use '../../common/styles/variables.scss' as variables;
-:root{
-    background-color: #F9F9F9;
-    font-size: 16px;
-    --main-bg-color: #F1F1F3;
-    --primary-color-lighter: #a1bbe9;
-    --primary-color-light: #7196d5;
-    --primary-color: #4d78c1;
-    --primary-color-dark: #305fad;
-    --primary-color-darker: #144598;
+@use '../../common/styles/variables.scss' as vars;
 
-    --secondary-color-light: #69ccae;
-    --secondary-color: #41c19a;
-    --secondary-color-dark: #1ec08f;
-    --secondary-color-darker: #00cc8e; 
-          
-}
 
 .wrapper{
     width: 100%;
     min-height: 100vh;
     .content-keeper{
-        background-color: #7196d5;
+        background-color: vars.$primary-color-darker;
         display: flex; 
         flex-direction: row;
+        gap: 30px;
         justify-content:space-between;
         padding-left: 0;
         .text-keeper{
@@ -43,7 +29,7 @@
         padding: 25px 0;
         h1{
             text-align: center;
-            color: var(--primary-color-dark);
+            color: vars.$primary-color-darker;
         }
     }
     
@@ -55,7 +41,7 @@
         }
     
 }
-@media screen and (min-width: variables.$mobile){
+@media screen and (min-width: vars.$mobile){
    
    
 }
