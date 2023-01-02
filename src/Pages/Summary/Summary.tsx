@@ -19,7 +19,7 @@ export const Summary = () => {
         </div>
         <div className='SummaryPage_buttons'>
           
-          <button className='SummaryPage_buttons_cancel'>
+          <button className='SummaryPage_buttons_back'>
             Cofnij
           </button>
 

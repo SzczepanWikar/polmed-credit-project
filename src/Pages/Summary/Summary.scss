@@ -5,19 +5,28 @@
   justify-content: center;
 
   &_container {
+    margin: 2rem 1rem;
     background-color: vars.$primary-color-lighter;
+    border-radius: 6px;
+    padding: 16px;
+    max-width: vars.$mobile;
+    width: 100%;
+    font-size: 1.1rem;
     h1 {
       color: vars.$primary-color-darker;
+      text-align: center;
     }
   }
   &_buttons {
     display: flex;
+    justify-content: space-between;
     button {
       font-size: 1rem;
       padding: 0.75rem;
       border-radius: 6px;
+      
     }
-    &_home {
+    &_back, &_home {
       color: #fff;
       background-color: vars.$secondary-color;
       border: none;
