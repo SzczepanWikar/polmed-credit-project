@@ -16,10 +16,20 @@
       color: vars.$primary-color-darker;
       text-align: center;
     }
+    form {
+      margin: 2rem 0;
+    }
   }
   &_buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 40%;
     justify-content: space-between;
+    
+    @media (max-width: 600px) {
+      grid-template-columns: 40% 40%;
+      font-size: 0.5rem;
+    }
+    
     button {
       font-size: 1rem;
       padding: 0.75rem;
@@ -34,7 +44,10 @@
     &_cancel {
       color:  #000;
       background-color: vars.$primary-color-light ;
-      border: none
+      border: none;
+      margin-top: 1rem;
+      justify-self: right;
+      grid-column: 2;
     }
   }
 }
