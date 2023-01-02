@@ -5,7 +5,7 @@
   justify-content: center;
 
   &_container {
-    background-color: #fff;
+    background-color: vars.$primary-color-lighter;
     h1 {
       color: vars.$primary-color-darker;
     }
@@ -23,9 +23,9 @@
       border: none;
     }
     &_cancel {
-      color: red;
-      background-color: vars.$primary-color-lighter;
-      border-color: red;
+      color:  #000;
+      background-color: vars.$primary-color-light ;
+      border: none
     }
   }
 }
