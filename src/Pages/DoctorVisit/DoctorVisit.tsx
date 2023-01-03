@@ -1,22 +1,36 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { GlobalContext } from '../../Contexts/GlobalContext';
-import { InputWrapper } from './components/InputWrapper/InputWrapper';
 import './DoctorVisit.scss';
 import { VisitCalendar } from './components/VisitCalendar/VisitCalendar';
 import { Doctor } from '../../common/interfaces/doctor.interface';
+import { DoctorProperty } from './components/DoctorProperty/DoctorProperty';
+import { TimeInput } from './components/TimeInput/TimeInput';
+import { reservationDto } from '../../common/interfaces/reservationDto.interface';
 
 export const DoctorVisit: React.FC = () => {
   const ctx = useContext(GlobalContext);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const idDoctor = searchParams.get('id');
+  let idService: number;
+
+  let today: Date = new Date();
+  today = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+    0,
+    0,
+    0,
+    0
+  );
+  const [dateVisit, setDate] = useState<Date>(today);
+
   let doctor: Doctor;
-
   doctor = ctx.doctors.find((d) => d.id === +idDoctor);
-
   const services = ctx.services;
-  let avatarImage: string;
+  let avatarImage = '';
 
   try {
     avatarImage = require('./../../assets/images/' + doctor?.avatar);
@@ -30,68 +44,75 @@ export const DoctorVisit: React.FC = () => {
     <div className="doctor-visit">
       <div className="doctor-visit__container">
         <h1>Umów się na wizytę</h1>
-        <form>
-          <h2>Dane lekarza</h2>
-          <div className="doctor-visit__doctor-data">
-            <div>
-              <InputWrapper
-                name="Imię"
-                readonly={true}
-                disabled={true}
-                value={doctor?.name}
-              ></InputWrapper>
-              <InputWrapper
-                name="Nazwisko"
-                readonly={true}
-                disabled={true}
-                value={doctor?.lastName}
-              ></InputWrapper>
-              <InputWrapper
-                name="Specjalizacja"
-                readonly={true}
-                disabled={true}
-                value={doctor?.specialization}
-              ></InputWrapper>
-            </div>
+        <h2>Dane lekarza</h2>
+        <div className="doctor-visit__doctor-data">
+          <div>
+            <DoctorProperty name="Imię" value={doctor?.name}></DoctorProperty>
+            <DoctorProperty
+              name="Nazwisko"
+              value={doctor?.lastName}
+            ></DoctorProperty>
+            <DoctorProperty
+              name="Specjalizacja"
+              value={doctor?.specialization}
+            ></DoctorProperty>
+          </div>
 
-            <div className="doctor-visit__doctor-avatar-wrapper">
-              <img
-                src={avatarImage}
-                alt={`${doctor?.name} ${doctor?.lastName}`}
-              ></img>
-            </div>
+          <div className="doctor-visit__doctor-avatar-wrapper">
+            <img
+              src={avatarImage}
+              alt={`${doctor?.name} ${doctor?.lastName}`}
+            ></img>
           </div>
-          <h2>Szczegóły wizyty</h2>
-          <div className="doctor-visit__select">
-            <label>Cel wizyty</label>
-            <select>
-              <optgroup>
-                <option> Wybierz cel wizyty </option>
-                {services.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.name} &mdash; {s.price}zł
-                  </option>
-                ))}
-              </optgroup>
-            </select>
+        </div>
+        <h2>Szczegóły wizyty</h2>
+        <div className="doctor-visit__select">
+          <label>Cel wizyty</label>
+          <select
+            onChange={(event) => {
+              idService = +event.target.value;
+              console.log(idService, +event.target.value);
+            }}
+          >
+            <optgroup>
+              <option> Wybierz cel wizyty </option>
+              {services.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name} &mdash; {s.price}zł
+                </option>
+              ))}
+            </optgroup>
+          </select>
+        </div>
+        <div className="doctor-visit__calendar">
+          <label>Data wizyty</label>
+          <div className="doctor-visit__calendar__container">
+            <VisitCalendar setDate={setDate} />
           </div>
-          <div className="doctor-visit__calendar">
-            <label>Data wizyty</label>
-            <div className="doctor-visit__calendar__container">
-              <VisitCalendar />
-            </div>
-          </div>
-          <InputWrapper name="Godzina" type="time"></InputWrapper>
-          <div className="doctor-visit__buttons">
-            <button
-              className="doctor-visit__buttons__back"
-              onClick={() => navigate('/')}
-            >
-              Powrót
-            </button>
-            <button className="doctor-visit__buttons__next">Dalej</button>
-          </div>
-        </form>
+        </div>
+        <label>Godzina</label>
+        <TimeInput time={dateVisit} setDate={setDate}></TimeInput>{' '}
+        <div className="doctor-visit__buttons">
+          <button
+            className="doctor-visit__buttons__back"
+            onClick={() => navigate('/')}
+          >
+            Powrót
+          </button>
+          <button
+            className="doctor-visit__buttons__next"
+            onClick={() => {
+              const locationState: reservationDto = {
+                idDoctor: +idDoctor,
+                idService: +idService,
+                time: dateVisit,
+              };
+              navigate('/summary', { state: locationState });
+            }}
+          >
+            Dalej
+          </button>
+        </div>
       </div>
     </div>
   );
