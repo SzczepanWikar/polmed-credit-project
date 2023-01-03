@@ -5,6 +5,23 @@
   margin: 0;
   padding: 0;
   font-family: 'LAto', sans-serif;
+
+  /* width */
+::-webkit-scrollbar {
+  width: 15px;
+  
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: vars.$primary-color-darker; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: vars.$primary-color-dark; 
+}
+
 }
 body {
   min-height: 100vh;
