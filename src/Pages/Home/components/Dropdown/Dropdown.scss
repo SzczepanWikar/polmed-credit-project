@@ -172,7 +172,6 @@
 
   li {
     list-style: none;
-    background-color: white;
     display: grid;
     padding: 40px 0px;
     grid-template-columns: 30% 70%;
@@ -194,7 +193,6 @@
       grid-column: 2;
       background-color: vars.$secondary-color;
       border: none;
-      margin-left: 455px;
       padding: 10px;
       border-radius: 6px;
       color: white;
@@ -225,7 +223,6 @@
   .dropdown-list {
     li {
       list-style: none;
-      background-color: white;
       display: grid;
       padding: 20px 0px;
       grid-template-columns: 30% 70%;
@@ -244,7 +241,6 @@
         grid-column: 2;
         background-color: #00cc8e;
         border: none;
-        margin-left: 350px;
         padding: 10px;
         border-radius: 6px;
         color: white;
