@@ -11,8 +11,8 @@
   }
   &__container {
     margin: 2rem 1rem;
-    background-color: #fff;
     border-radius: 6px;
+    background-color: vars.$primary-color-lighter;
     padding: 16px;
     max-width: vars.$mobile;
     width: 100%;
@@ -105,11 +105,10 @@
       border-radius: 6px;
     }
     &__next {
-      color: #fff;
       background-color: vars.$secondary-color;
     }
     &__back {
-      background-color: vars.$primary-color-lighter;
+      background-color: vars.$primary-color-light;
     }
   }
 }
