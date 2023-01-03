@@ -22,13 +22,12 @@
     h4 {
       padding: 1rem;
     }
-    
   }
   &_buttons {
     display: flex;
+    justify-content: space-between;
     
     @media (max-width: 600px) {
-      
       font-size: 0.5rem;
     }
     
@@ -41,14 +40,20 @@
     
     &_cancel {
       color:  #000;
-      background-color: vars.$primary-color-light ;
+      background-color: vars.$primary-color-light;
       border: none;
-      margin-left: auto;
-      margin-right: auto;
-
+      
     }
     &_cancel:hover{
       background-color: vars.$primary-color-dark ;
+      cursor: pointer;
+    }
+    &_home {
+      background-color: vars.$secondary-color;
+      border: none;
+    }
+    &_home:hover {
+      background-color: #41C19A;
       cursor: pointer;
     }
   }

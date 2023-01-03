@@ -36,6 +36,9 @@ export const Summary = () => {
           <button className='SummaryPage_buttons_cancel'>
             Anuluj
           </button>
+          <button className='SummaryPage_buttons_home'>
+            Zatwierdź
+          </button>
         </div>
       </div>
     </div>
