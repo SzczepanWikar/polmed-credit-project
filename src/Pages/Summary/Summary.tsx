@@ -8,30 +8,33 @@ export const Summary = () => {
     <div className='SummaryPage'>
       <div className='SummaryPage_container'>
         <h1>Potwierdzenie rezerwacji</h1>
-        <form>
-          <div>
-            Doktor:
-            Anna Kowalska
-          </div>
-          <div>
-            Cel wizyty:
-            Wizyta kontrolna
-          </div>
-          <div>
-            Termin wizyty:
-            16.01.2023 14:00
-          </div>
-        </form>
-        <div className='SummaryPage_buttons'>
+        <div className='SummaryPage_form'>
+          <form>
+            <label>
+              <h4>
+                Doktor:
+                <input type='text'name='name' value='Anna Kowalska' />
+              </h4>
+            </label>
           
-          <button className='SummaryPage_buttons_back'>
-            Powrót
-          </button>
-          <button className='SummaryPage_buttons_home'>
-            Powrót do strony głównej
-          </button>
+          <h4>
+            Cel wizyty:
+            <input type='text' value='Wizyta kontrolna'/>
+            
+          </h4>
+          <h4>
+            Cena wizyty:
+            <input type='text' value='150zł'/>
+          </h4>
+          <h4>
+          Termin wizyty:
+          <input type='date'/>
+          </h4>
+          </form>
+        </div>
+        <div className='SummaryPage_buttons'>
           <button className='SummaryPage_buttons_cancel'>
-            Anuluj rezerwacje
+            Anuluj
           </button>
         </div>
       </div>

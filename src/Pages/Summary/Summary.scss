@@ -16,17 +16,19 @@
       color: vars.$primary-color-darker;
       text-align: center;
     }
-    form {
-      margin: 2rem 0;
+  }
+  &_form {
+    margin-bottom: 1rem;
+    h4 {
+      padding: 1rem;
     }
+    
   }
   &_buttons {
-    display: grid;
-    grid-template-columns: 20% 40%;
-    justify-content: space-between;
+    display: flex;
     
     @media (max-width: 600px) {
-      grid-template-columns: 40% 40%;
+      
       font-size: 0.5rem;
     }
     
@@ -36,18 +38,18 @@
       border-radius: 6px;
       
     }
-    &_back, &_home {
-      color: #fff;
-      background-color: vars.$secondary-color;
-      border: none;
-    }
+    
     &_cancel {
       color:  #000;
       background-color: vars.$primary-color-light ;
       border: none;
-      margin-top: 1rem;
-      justify-self: right;
-      grid-column: 2;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+    &_cancel:hover{
+      background-color: vars.$primary-color-dark ;
+      cursor: pointer;
     }
   }
 }
