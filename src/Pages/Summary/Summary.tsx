@@ -19,20 +19,24 @@ export const Summary = () => {
                 <input type='text'name='name' value='Anna Kowalska' />
               </h4>
             </label>
-          
-          <h4>
-            Cel wizyty:
-            <input type='text' value='Wizyta kontrolna'/>
-            
-          </h4>
-          <h4>
-            Cena wizyty:
-            <input type='text' value='150zł'/>
-          </h4>
-          <h4>
-          Termin wizyty:
-          <input type='date'/>
-          </h4>
+            <label>
+              <h4>
+                Cel wizyty:
+                <input type='text' value='Wizyta kontrolna'/>
+              </h4>
+            </label>
+            <label>
+              <h4>
+                Cena wizyty:
+                <input type='text' value='150zł'/>
+              </h4>
+            </label>
+            <label>
+              <h4>
+                Termin wizyty:
+                <input type='text' value='30.01.2023'/>
+                </h4>
+            </label>
           </form>
         </div>
         <div className='SummaryPage_buttons'>
