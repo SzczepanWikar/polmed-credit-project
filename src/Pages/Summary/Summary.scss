@@ -17,7 +17,7 @@
       text-align: center;
     }
   }
-  &_form {
+  &_formation {
     margin-bottom: 1rem;
     h4 {
       padding: 1rem;
@@ -26,34 +26,26 @@
   &_buttons {
     display: flex;
     justify-content: space-between;
-    
-    @media (max-width: 600px) {
-      font-size: 0.5rem;
-    }
-    
+
     button {
       font-size: 1rem;
       padding: 0.75rem;
       border-radius: 6px;
-      
-    }
-    
-    &_cancel {
-      color:  #000;
-      background-color: vars.$primary-color-light;
       border: none;
-      
     }
-    &_cancel:hover{
-      background-color: vars.$primary-color-dark ;
+
+    &_cancel {
+      background-color: vars.$primary-color-light;
+    }
+    &_cancel:hover {
+      background-color: vars.$primary-color-dark;
       cursor: pointer;
     }
     &_home {
       background-color: vars.$secondary-color;
-      border: none;
     }
     &_home:hover {
-      background-color: #41C19A;
+      background-color: #41c19a;
       cursor: pointer;
     }
   }

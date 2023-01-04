@@ -1,6 +1,9 @@
 import './Summary.scss';
+import { useNavigate } from 'react-router-dom';
 
 export const Summary = () => {
+
+  const navigate = useNavigate();
 
   return (
 
@@ -8,7 +11,7 @@ export const Summary = () => {
     <div className='SummaryPage'>
       <div className='SummaryPage_container'>
         <h1>Potwierdzenie rezerwacji</h1>
-        <div className='SummaryPage_form'>
+        <div className='SummaryPage_formation'>
           <form>
             <label>
               <h4>
@@ -33,10 +36,20 @@ export const Summary = () => {
           </form>
         </div>
         <div className='SummaryPage_buttons'>
-          <button className='SummaryPage_buttons_cancel'>
+          <button 
+            className='SummaryPage_buttons_cancel'
+            onClick={() => {
+              navigate('/');
+            }}
+          >
             Anuluj
           </button>
-          <button className='SummaryPage_buttons_home'>
+          <button 
+            className='SummaryPage_buttons_home'
+            onClick={() => {
+              navigate('/');
+            }}
+          >
             Zatwierdź
           </button>
         </div>
