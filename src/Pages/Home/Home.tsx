@@ -14,7 +14,8 @@ export const Home = () => {
     <div className='content-keeper'>
       {/* <img className='doctor-img' src={require('../../assets/images/doctors.jpg')}/>
        */}
-       <p className="text-keeper">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing </p><img className="image" src={sample} />
+       
+       <p className="text-keeper"><h1 style={{marginBottom: "20px", textAlign: "left" }}>Centrum Medyczne POLMED</h1>Nasza klinika zapewnia pacjentowi obszerny pakiet obsługi medycznej, w ramach którego może on skorzystać zarówno z wielu płatnych, jak i niepłatnych świadczeń. Staramy się zapewnić pomoc na najwyższym poziomie. Równocześnie kładziemy nacisk na dobrą komunikację z pacjentem.</p><img className="image" src={sample} />
        
     </div>
     <div className='headers'>

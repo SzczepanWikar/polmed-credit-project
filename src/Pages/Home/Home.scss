@@ -1,9 +1,10 @@
 @use '../../common/styles/variables.scss' as vars;
 
-
 .wrapper{
     width: 100%;
     min-height: 100vh;
+    
+    
     .content-keeper{
         background-color: vars.$primary-color-darker;
         display: flex; 
@@ -11,6 +12,8 @@
         gap: 30px;
         justify-content:space-between;
         padding-left: 0;
+        
+        
         .text-keeper{
             width: 50%;
             text-align: justify;
@@ -21,8 +24,7 @@
             margin-left: 60px;
         }
         .image{
-            height: 400px;
-           
+            height: 350px;
         }
     }
     .headers{
@@ -30,18 +32,57 @@
         h1{
             text-align: center;
             color: vars.$primary-color-darker;
+            font-size: 40px;
         }
     }
     
         .doctors-wrapper{
-        
+            
+            padding: 20px 20px 20px 20px;
             list-style: none;
+            display: flex;
+            list-style: none;
+            flex-direction: column;
             justify-content: space-around;
-
+            gap: 20px;
+            margin: auto;
+        }   
+            
         }
     
-}
-@media screen and (min-width: vars.$mobile){
-   
+
+@media screen and (max-width: 925px){
+    .wrapper{
+        
+        .content-keeper{
+            display: flex;
+            flex-direction: column-reverse;
+            padding-bottom: 50px;
+            
+            .text-keeper{
+                text-align:justify;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 16px;
+            }
+            .image{
+               width: 100%;
+               height: auto;
+            }
+        }
+        .headers{
+            
+            h1{
+                font-size: 24px;
+            }
+        }
+        
+            .doctors-wrapper{
+            
+               justify-content: space-around;
+            }
+        
+    }
    
 }
