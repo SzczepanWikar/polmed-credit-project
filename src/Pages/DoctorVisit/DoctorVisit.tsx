@@ -4,7 +4,7 @@ import { GlobalContext } from '../../Contexts/GlobalContext';
 import './DoctorVisit.scss';
 import { VisitCalendar } from './components/VisitCalendar/VisitCalendar';
 import { Doctor } from '../../common/interfaces/doctor.interface';
-import { DoctorProperty } from './components/DoctorProperty/DoctorProperty';
+import { DoctorProperty } from '../../components/VisitProperty/VisitProperty';
 import { TimeInput } from './components/TimeInput/TimeInput';
 import { reservationDto } from '../../common/interfaces/reservationDto.interface';
 

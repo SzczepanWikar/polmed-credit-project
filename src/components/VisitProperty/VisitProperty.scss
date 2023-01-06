@@ -1,10 +1,11 @@
-@use './../../../../common/styles/variables.scss' as vars;
+@use './../../common/styles/variables.scss' as vars;
 
-.doctor-property {
+.visit-property {
   width: 100%;
   display: grid;
   grid-template-columns: 6.5rem auto;
   padding: 0.5rem 0;
+  gap: 1rem;
   @media (max-width: 350px) {
     display: block;
     grid-template-columns: none;
