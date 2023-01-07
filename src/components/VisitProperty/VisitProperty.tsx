@@ -1,14 +1,11 @@
-import './DoctorProperty.scss';
+import './VisitProperty.scss';
 export type InputProps = {
   name: string;
-  value?: any;
-  disabled?: boolean;
-  readonly?: boolean;
-  type?: 'text' | 'time' | undefined;
+  value: any;
 };
 
 export const DoctorProperty: React.FC<InputProps> = ({ name, value }) => (
-  <div className="doctor-property">
+  <div className="visit-property">
     <label>{name}</label>
     <input readOnly={true} disabled={true} value={value}></input>
   </div>
