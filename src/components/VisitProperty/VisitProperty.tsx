@@ -7,6 +7,6 @@ export type InputProps = {
 export const DoctorProperty: React.FC<InputProps> = ({ name, value }) => (
   <div className="visit-property">
     <label>{name}</label>
-    <input readOnly={true} disabled={true} value={value}></input>
+    <span>{value}</span>
   </div>
 );
