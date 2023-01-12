@@ -41,9 +41,7 @@
   &__doctor-avatar-wrapper {
     display: flex;
     justify-content: center;
-    @media (max-width: vars.$mobile) {
-      justify-content: right;
-    }
+
     @media (max-width: 600px) {
       display: none;
     }
@@ -58,7 +56,7 @@
     display: grid;
     grid-template-columns: 6.5rem auto;
     padding: 0.5rem 0;
-    @media (max-width: 350px) {
+    @media (max-width: 400px) {
       display: block;
       select {
         width: 100%;
