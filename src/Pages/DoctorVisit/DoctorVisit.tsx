@@ -13,7 +13,7 @@ export const DoctorVisit: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const idDoctor = searchParams.get('id');
-
+  const [idService, setIdService] = useState<number>();
   let today: Date = new Date();
   today = new Date(
     today.getFullYear(),
@@ -24,8 +24,11 @@ export const DoctorVisit: React.FC = () => {
     0,
     0
   );
-  const [idService, setIdService] = useState<number>();
   const [dateVisit, setDate] = useState<Date>(today);
+  const [isTimeSet, setIsTimeSet] = useState<boolean>(false);
+  const [errorService, setErrorService] = useState<boolean>();
+  const [errorDate, setErrorDate] = useState<boolean>();
+  const [errorTime, setErrorTime] = useState<boolean>();
 
   let doctor: Doctor;
   doctor = ctx.doctors.find((d) => d.id === +idDoctor);
@@ -39,7 +42,27 @@ export const DoctorVisit: React.FC = () => {
     if (!idDoctor || !doctor) {
       navigate('/');
     }
-  });
+    if (errorDate && dateVisit.getTime() !== today.getTime()) {
+      setErrorDate(false);
+    }
+    if (errorService && idService) {
+      setErrorService(false);
+    }
+    if (errorTime && isTimeSet) {
+      setErrorTime(false);
+    }
+  }, [
+    idDoctor,
+    doctor,
+    dateVisit,
+    navigate,
+    idService,
+    today,
+    isTimeSet,
+    errorDate,
+    errorService,
+    errorTime,
+  ]);
   return (
     <div className="doctor-visit">
       <div className="doctor-visit__container">
@@ -83,14 +106,33 @@ export const DoctorVisit: React.FC = () => {
             </optgroup>
           </select>
         </div>
+        {errorService ? (
+          <label className="doctor-visit__error">Wybierz cel wizyty</label>
+        ) : (
+          <></>
+        )}
         <div className="doctor-visit__calendar">
           <label>Data wizyty</label>
           <div className="doctor-visit__calendar__container">
-            <VisitCalendar setDate={setDate} />
+            <VisitCalendar setDate={setDate} setIsTimeSet={setIsTimeSet} />
           </div>
+          {errorDate ? (
+            <label className="doctor-visit__error">Wybierz datę wizyty</label>
+          ) : (
+            <></>
+          )}
         </div>
         <label>Godzina</label>
-        <TimeInput time={dateVisit} setDate={setDate}></TimeInput>{' '}
+        <TimeInput
+          time={dateVisit}
+          setDate={setDate}
+          setIsTimeSet={setIsTimeSet}
+        ></TimeInput>{' '}
+        {errorTime ? (
+          <label className="doctor-visit__error">Wybierz godzinę wizyty</label>
+        ) : (
+          <></>
+        )}
         <div className="doctor-visit__buttons">
           <button
             className="doctor-visit__buttons__back"
@@ -101,12 +143,26 @@ export const DoctorVisit: React.FC = () => {
           <button
             className="doctor-visit__buttons__next"
             onClick={() => {
-              const locationState: reservationDto = {
-                idDoctor: +idDoctor,
-                idService: idService,
-                time: dateVisit,
-              };
-              navigate('/summary', { state: locationState });
+              if (idService && dateVisit !== today && isTimeSet) {
+                const locationState: reservationDto = {
+                  idDoctor: +idDoctor,
+                  idService: idService,
+                  time: dateVisit,
+                };
+                navigate('/summary', { state: locationState });
+              } else {
+                if (!isTimeSet && dateVisit.getTime() !== today.getTime()) {
+                  setErrorTime(true);
+                }
+
+                if (dateVisit.getTime() === today.getTime()) {
+                  setErrorDate(true);
+                }
+
+                if (!idService) {
+                  setErrorService(true);
+                }
+              }
             }}
           >
             Dalej
