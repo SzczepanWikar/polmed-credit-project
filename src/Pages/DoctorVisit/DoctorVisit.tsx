@@ -4,7 +4,7 @@ import { GlobalContext } from '../../Contexts/GlobalContext';
 import './DoctorVisit.scss';
 import { VisitCalendar } from './components/VisitCalendar/VisitCalendar';
 import { Doctor } from '../../common/interfaces/doctor.interface';
-import { DoctorProperty } from './components/DoctorProperty/DoctorProperty';
+import { DoctorProperty } from '../../components/VisitProperty/VisitProperty';
 import { TimeInput } from './components/TimeInput/TimeInput';
 import { reservationDto } from '../../common/interfaces/reservationDto.interface';
 
@@ -13,7 +13,6 @@ export const DoctorVisit: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const idDoctor = searchParams.get('id');
-  let idService: number;
 
   let today: Date = new Date();
   today = new Date(
@@ -25,6 +24,7 @@ export const DoctorVisit: React.FC = () => {
     0,
     0
   );
+  const [idService, setIdService] = useState<number>();
   const [dateVisit, setDate] = useState<Date>(today);
 
   let doctor: Doctor;
@@ -70,8 +70,7 @@ export const DoctorVisit: React.FC = () => {
           <label>Cel wizyty</label>
           <select
             onChange={(event) => {
-              idService = +event.target.value;
-              console.log(idService, +event.target.value);
+              setIdService(+event.target.value);
             }}
           >
             <optgroup>
@@ -104,7 +103,7 @@ export const DoctorVisit: React.FC = () => {
             onClick={() => {
               const locationState: reservationDto = {
                 idDoctor: +idDoctor,
-                idService: +idService,
+                idService: idService,
                 time: dateVisit,
               };
               navigate('/summary', { state: locationState });
