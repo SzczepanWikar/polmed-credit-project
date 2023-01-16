@@ -1,0 +1,60 @@
+@use '../../common/styles/variables.scss' as vars;
+
+.SummaryPage {
+  display: flex;
+  justify-content: center;
+
+  &_container {
+    margin: 2rem 1rem;
+    background-color: vars.$primary-color-lighter;
+    border-radius: 6px;
+    padding: 16px;
+    max-width: vars.$mobile;
+    width: 100%;
+    font-size: 1.1rem;
+    h1 {
+      color: vars.$primary-color-darker;
+      text-align: center;
+    }
+  }
+  &_form {
+    margin-bottom: 1rem;
+    h4 {
+      padding: 1rem;
+    }
+  }
+  &_buttons {
+    display: flex;
+    justify-content: space-between;
+    
+    @media (max-width: 600px) {
+      font-size: 0.5rem;
+    }
+    
+    button {
+      font-size: 1rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      
+    }
+    
+    &_cancel {
+      color:  #000;
+      background-color: vars.$primary-color-light;
+      border: none;
+      
+    }
+    &_cancel:hover{
+      background-color: vars.$primary-color-dark ;
+      cursor: pointer;
+    }
+    &_home {
+      background-color: vars.$secondary-color;
+      border: none;
+    }
+    &_home:hover {
+      background-color: #41C19A;
+      cursor: pointer;
+    }
+  }
+}
