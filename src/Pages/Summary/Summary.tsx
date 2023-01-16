@@ -1,12 +1,9 @@
 import './Summary.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DoctorProperty } from '../../components/VisitProperty/VisitProperty';
-import { Doctor } from '../../common/interfaces/doctor.interface';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { GlobalContext } from '../../Contexts/GlobalContext';
 import { reservationDto } from '../../common/interfaces/reservationDto.interface';
-import { Service } from '../../common/interfaces/service.interface';
-import { Route, Routes, useParams } from 'react-router-dom';
 
 export const Summary: React.FC = (props: any) => {
   const ctx = useContext(GlobalContext);
@@ -75,7 +72,7 @@ export const Summary: React.FC = (props: any) => {
                 navigate('/');
               }}
             >
-              Anuluj rezerwacje
+              Anuluj
             </button>
             <button
               className="SummaryPage_buttons_home"
