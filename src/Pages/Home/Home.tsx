@@ -15,7 +15,7 @@ export const Home = () => {
       {/* <img className='doctor-img' src={require('../../assets/images/doctors.jpg')}/>
        */}
        
-       <p className="text-keeper"><h1 style={{marginBottom: "20px", textAlign: "left" }}>Centrum Medyczne POLMED</h1>Nasza klinika zapewnia pacjentowi obszerny pakiet obsługi medycznej, w ramach którego może on skorzystać zarówno z wielu płatnych, jak i niepłatnych świadczeń. Staramy się zapewnić pomoc na najwyższym poziomie. Równocześnie kładziemy nacisk na dobrą komunikację z pacjentem.</p><img className="image" src={sample} />
+       <div className="text-keeper"><h1 style={{marginBottom: "20px", textAlign: "left" }}>Centrum Medyczne POLMED</h1>Nasza klinika zapewnia pacjentowi obszerny pakiet obsługi medycznej, w ramach którego może on skorzystać zarówno z wielu płatnych, jak i niepłatnych świadczeń. Staramy się zapewnić pomoc na najwyższym poziomie. Równocześnie kładziemy nacisk na dobrą komunikację z pacjentem.</div><img className="image" src={sample} />
        
     </div>
     <div className='headers'>
