@@ -32,7 +32,7 @@
     }
     .dropdown-button:hover{
         color: white;
-        background-color: #1EC08F;
+        background-color: vars.$secondary-color-dark;
    
     }
 }
@@ -72,6 +72,9 @@
                 padding: 10px;
                 border-radius: 6px;
                 color: white;
+            }
+            button:hover{
+                background-color: vars.$secondary-color-dark;
             }
             .name{
                 font-weight: bolder;
