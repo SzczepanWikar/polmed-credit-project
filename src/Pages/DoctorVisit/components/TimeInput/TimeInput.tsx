@@ -3,6 +3,7 @@ import './TimeInput.scss';
 export type TimeInputProps = {
   time: Date;
   setDate: Function;
+  setIsTimeSet: Function;
 };
 
 export class TimeInput extends Component<TimeInputProps> {
@@ -34,11 +35,12 @@ export class TimeInput extends Component<TimeInputProps> {
     }
     this.checkedItem = target;
     this.checkedItem.classList.add('time-input__picker--checked');
-    const { time, setDate } = this.props;
+    const { time, setDate, setIsTimeSet } = this.props;
     const splittedHour = hour.split(':');
     time.setHours(+splittedHour[0]);
     time.setMinutes(+splittedHour[1]);
     setDate(time);
+    setIsTimeSet(true);
   }
   render() {
     this.checkedItem?.classList?.remove('time-input__picker--checked');

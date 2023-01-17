@@ -1,7 +1,10 @@
 import Calendar from 'react-calendar';
 import './VisitCalendar.scss';
 
-export const VisitCalendar: React.FC<{ setDate: Function }> = ({ setDate }) => {
+export const VisitCalendar: React.FC<{
+  setDate: Function;
+  setIsTimeSet: Function;
+}> = ({ setDate, setIsTimeSet }) => {
   const occupiedTerms: Date[] = [
     // Occupied dates for demonstration purpose
     new Date(2023, 0, 20, 0, 0, 0),
@@ -29,7 +32,10 @@ export const VisitCalendar: React.FC<{ setDate: Function }> = ({ setDate }) => {
           occupiedTerms.some((e) => e.getTime() === date.getTime())
         );
       }}
-      onChange={(event) => setDate(event)}
+      onChange={(event) => {
+        setDate(event);
+        setIsTimeSet(false);
+      }}
     />
   );
 };
