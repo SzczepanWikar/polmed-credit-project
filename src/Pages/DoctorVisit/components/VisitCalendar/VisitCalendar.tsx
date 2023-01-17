@@ -3,8 +3,7 @@ import './VisitCalendar.scss';
 
 export const VisitCalendar: React.FC<{
   setDate: Function;
-  setIsTimeSet: Function;
-}> = ({ setDate, setIsTimeSet }) => {
+}> = ({ setDate }) => {
   const occupiedTerms: Date[] = [
     // Occupied dates for demonstration purpose
     new Date(2023, 0, 20, 0, 0, 0),
@@ -34,7 +33,6 @@ export const VisitCalendar: React.FC<{
       }}
       onChange={(event) => {
         setDate(event);
-        setIsTimeSet(false);
       }}
     />
   );
