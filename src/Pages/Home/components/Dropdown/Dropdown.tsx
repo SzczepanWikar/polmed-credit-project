@@ -1,13 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react'
-import   './Dropdown.scss';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Specialization } from '../../../../common/enums/specialization.enum';
-/*Potrzeba zmienic rozmiar obrazkow */
-//  import {anna, antoni, jan, zofia } from '../../../../assets/images/export_all.jsx';
-import doctor from '../../../../assets/images/doctor.png'
-import { Doctor } from '../../../../common/interfaces/doctor.interface';
-import  parents from  '../../../../assets/icons/parents.svg'
-import  child from  '../../../../assets/icons/child.svg'
+import './Dropdown.scss';
 import { Icon } from '@iconify/react';
 import { GlobalContext } from '../../../../Contexts/GlobalContext';
 interface Props {
@@ -26,16 +19,7 @@ interface Props {
     setState(false);
     
   }
-  // let array = doctors;
-  // console.log(doctors.id)
 
-// function onClickChangeId(doctor: getDoctor) {
-  
-//   console.log(doctor.doctors);
-// }
-
-
-                  /*doctors.filter(obj => obj.id === 3)*/
   return (
     <div>
        <div className="dropdown">
@@ -60,7 +44,7 @@ interface Props {
                 </li>
                 </div>
                   : null)}
-              {/* arr.map(element => element > 5? element = 9 : element) */}
+             
              
  
               </div>
