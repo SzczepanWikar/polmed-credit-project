@@ -7,33 +7,34 @@ interface Props {
   children?: React.ReactNode;
   ikonka?: any;
 }
- const Dropdown: React.FC<Props>= ({children, ikonka}) => {
-
+const Dropdown: React.FC<Props> = ({ children, ikonka }) => {
   const ctx = useContext(GlobalContext);
 
-  const[state, setState] = useState(false);
-  const showDropdown=()=>{
+  const [state, setState] = useState(false);
+  const showDropdown = () => {
     setState(true);
-  }
-  const hideDropdown=()=>{
+  };
+  const hideDropdown = () => {
     setState(false);
-    
-  }
+  };
 
   return (
     <div>
-       <div className="dropdown">
-          <div className="dropdown-button" onClick={state ? hideDropdown : showDropdown} >
-          <Icon icon= {ikonka} color="white" width="40" height="40"/>
-            <span>{children}</span>
-            
-          </div> 
+      <div className="dropdown">
+        <div
+          className="dropdown-button"
+          onClick={state ? hideDropdown : showDropdown}
+        >
+          <Icon icon={ikonka} color="white" width="40" height="40" />
+          <span>{children}</span>
         </div>
-    
-        {state? (<ul className="dropdown-list" onClick={showDropdown} >     
-              <div>
-                { ctx.doctors.map(obj =>  obj.specialization === children  ? 
-                
+      </div>
+
+      {state ? (
+        <ul className="dropdown-list" onClick={showDropdown}>
+          <div>
+            {ctx.doctors.map((obj) =>
+              obj.specialization === children ? (
                 <div key={obj.id}>
                   <p>Dostępny w tym tygodniu</p>
                   <li>
@@ -45,14 +46,12 @@ interface Props {
                 </li>
                 
                 </div>
-                  : null)}
-             
-             
- 
-              </div>
-            </ul>): null}
-        
+              ) : null
+            )}
+          </div>
+        </ul>
+      ) : null}
     </div>
-  )
-}
+  );
+};
 export default Dropdown;
