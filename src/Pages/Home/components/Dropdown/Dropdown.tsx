@@ -38,13 +38,21 @@ const Dropdown: React.FC<Props> = ({ children, ikonka }) => {
                 <div key={obj.id}>
                   <p>Dostępny w tym tygodniu</p>
                   <li>
-                  
-                  <img  className="doctor-picture" src={require(`../../../../assets/images/`+ obj.avatar )} />
-                  <span className="name">Lek. {obj.name + " " + obj.lastName}</span>
-                  <span className="specialization">{obj.specialization} </span>
-                  <Link to= {`/doctor-visit?id=${obj.id}`}><button>Umów się</button></Link>
-                </li>
-                
+                    <img
+                      alt=""
+                      className="doctor-picture"
+                      src={require(`../../../../assets/images/` + obj.avatar)}
+                    />
+                    <span className="name">
+                      Lek. {obj.name + ' ' + obj.lastName}
+                    </span>
+                    <span className="specialization">
+                      {obj.specialization}{' '}
+                    </span>
+                    <Link to={`/doctor-visit?id=${obj.id}`}>
+                      <button>Umów się</button>
+                    </Link>
+                  </li>
                 </div>
               ) : null
             )}
