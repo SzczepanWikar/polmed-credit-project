@@ -10,7 +10,7 @@ export const Summary: React.FC = (props: any) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const reservation: reservationDto = location.state;
+  const reservation: reservationDto = location?.state;
   const doctor = ctx.doctors.find((d) => d.id === reservation.idDoctor);
   const service = ctx.services.find((s) => s.id === reservation.idService);
 
@@ -20,7 +20,14 @@ export const Summary: React.FC = (props: any) => {
     avatarImage = require('./../../assets/images/' + doctor?.avatar);
   } catch (e) {}
   useEffect(() => {
-    if (!doctor) {
+    if (
+      !(
+        reservation &&
+        reservation?.idDoctor &&
+        reservation?.idService &&
+        reservation?.time
+      )
+    ) {
       navigate('/');
     }
   });
@@ -39,15 +46,15 @@ export const Summary: React.FC = (props: any) => {
               ></DoctorProperty>
               <DoctorProperty
                 name="Cel wizyty"
-                value={service.name}
+                value={service?.name}
               ></DoctorProperty>
               <DoctorProperty
                 name="Cena wizyty"
-                value={service.price + ' zł'}
+                value={service?.price + ' zł'}
               ></DoctorProperty>
               <DoctorProperty
                 name="Termin wizyty"
-                value={reservation.time.toLocaleString('pl-PL', {
+                value={reservation?.time.toLocaleString('pl-PL', {
                   year: 'numeric',
                   month: 'numeric',
                   day: 'numeric',

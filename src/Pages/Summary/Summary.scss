@@ -13,9 +13,6 @@
     width: 100%;
     font-size: 1.1rem;
 
-    // @media (max-width: 600px) {
-    //   margin: 1rem;
-    // }
     h1 {
       color: vars.$primary-color-darker;
       text-align: center;
@@ -34,18 +31,11 @@
       display: flex;
     }
   }
-  // &_formation {
-  //   display: grid;
-  //   grid-template-columns: 70% 30%;
-  //   margin-bottom: 1rem;
-  //   h4 {
-  //     padding: 1rem;
-  //   }
-  // }
+
   &_info {
     display: grid;
     grid-template-columns: 50% 50%;
-    
+
     @media (max-width: 600px) {
       display: flex;
       justify-content: center;
@@ -62,7 +52,7 @@
     @media (max-width: 600px) {
       display: none;
     }
-    img{
+    img {
       max-height: 12rem;
       max-width: 12rem;
       border-radius: 6px;
