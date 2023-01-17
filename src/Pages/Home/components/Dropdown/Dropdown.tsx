@@ -50,7 +50,7 @@ interface Props {
               <div>
                 { ctx.doctors.map(obj =>  obj.specialization === children  ? 
                 
-                <div >
+                <div key={obj.id}>
                   
                   <li >
                   <img className="doctor-picture" src={require(`../../../../assets/images/`+ obj.avatar )} />
