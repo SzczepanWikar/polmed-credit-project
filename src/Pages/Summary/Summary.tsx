@@ -27,7 +27,6 @@ export const Summary: React.FC = (props: any) => {
         reservation?.idService &&
         reservation?.time
       )
-      
     ) {
       navigate('/');
     }
